@@ -1,33 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mini Spotify - 20 MINS</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini Spotify — 20 MINS</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="player">
-  <div class="album-art">
-    <img src="assets/cover.jpg" alt="Album Cover">
-  </div>
-  <div class="song-info">
-    <h1>20 MINS</h1>
-    <h2>Lil Uzi Vert</h2>
-  </div>
-  <audio id="audio" src="assets/20mins.mp3"></audio>
-  <div class="controls">
-    <button id="playBtn">▶️</button>
-    <input type="range" id="progress" value="0" min="0" step="1">
-    <div class="time">
-      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">♬</div>
+      <div class="brand-name">MiniSpotify</div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active">Home</button>
+      <button class="nav-item">Search</button>
+      <button class="nav-item">Your Library</button>
+    </nav>
+
+    <div class="playlists">
+      <div class="pl-title">PLAYLISTS</div>
+      <ul>
+        <li>Only: 20 MINS — Lil Uzi Vert</li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <header class="topbar">
+      <div class="search-placeholder">Search (disabled in this mini)</div>
+      <div class="account">
+        <div class="acct-avatar">A</div>
+        <div class="acct-name">Arud</div>
+      </div>
+    </header>
+
+    <section class="center">
+      <div class="player-card">
+        <div class="left">
+          <div class="cover">
+            <img id="coverImg" src="assets/cover.jpg" alt="Album cover">
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="track-meta">
+            <div class="track-title">20 MINS</div>
+            <div class="track-artist">Lil Uzi Vert</div>
+            <div class="track-extra">Single • Mini Player</div>
+          </div>
+
+          <div class="controls-wide">
+            <div class="big-controls">
+              <button id="shuffleBtn" title="Shuffle" class="icon-btn">🔀</button>
+              <button id="prevBtn" title="Previous" class="circle-btn">⏮️</button>
+              <button id="playBtn" title="Play" class="play-btn">▶️</button>
+              <button id="nextBtn" title="Next" class="circle-btn">⏭️</button>
+              <button id="repeatBtn" title="Repeat" class="icon-btn">🔁</button>
+            </div>
+
+            <div class="progress-row">
+              <span id="curTime" class="time">0:00</span>
+              <input id="progress" type="range" min="0" max="100" value="0" step="1" />
+              <span id="durTime" class="time">0:00</span>
+            </div>
+
+            <div class="misc-controls">
+              <button id="likeBtn" class="icon-btn">♡</button>
+              <div class="volume-wrap">
+                <button id="muteBtn" class="icon-btn">🔊</button>
+                <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="info-row">
+      <div>Only plays the single track — drop your MP3 into <code>assets/20mins.mp3</code></div>
+    </footer>
+  </main>
+
+  <!-- BOTTOM PLAYER (mini control) -->
+  <div class="bottom-bar">
+    <div class="now-playing">
+      <img id="miniCover" src="assets/cover.jpg" alt="cover">
+      <div class="np-text">
+        <div class="np-title">20 MINS</div>
+        <div class="np-artist">Lil Uzi Vert</div>
+      </div>
+    </div>
+
+    <div class="mini-controls">
+      <button id="mbPrev" class="mini-icon">⏮️</button>
+      <button id="mbPlay" class="mini-play">▶️</button>
+      <button id="mbNext" class="mini-icon">⏭️</button>
+      <div class="mini-progress-wrap">
+        <input id="miniProgress" type="range" min="0" max="100" step="1" value="0">
+      </div>
+    </div>
+
+    <div class="mini-right">
+      <div id="miniTime">0:00 / 0:00</div>
     </div>
   </div>
+
 </div>
+
+<!-- audio -->
+<audio id="audio" preload="metadata" src="assets/20mins.mp3"></audio>
 
 <script src="script.js"></script>
 <script src="scripts/spotifyEffects.js"></script>
-
 </body>
 </html>
