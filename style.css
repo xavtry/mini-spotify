@@ -1,1 +1,64 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.player {
+  width: 350px;
+  background: #1e1e1e;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.album-art img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.song-info h1 {
+  margin: 15px 0 5px 0;
+  font-size: 22px;
+  color: #1db954;
+}
+
+.song-info h2 {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  color: #b3b3b3;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#playBtn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: #1db954;
+}
+
+#progress {
+  width: 100%;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #b3b3b3;
+  margin-top: 5px;
+}
 
