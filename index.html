@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Spotify - 20 MINS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="player">
+  <div class="album-art">
+    <img src="assets/cover.jpg" alt="Album Cover">
+  </div>
+  <div class="song-info">
+    <h1>20 MINS</h1>
+    <h2>Lil Uzi Vert</h2>
+  </div>
+  <audio id="audio" src="assets/20mins.mp3"></audio>
+  <div class="controls">
+    <button id="playBtn">▶️</button>
+    <input type="range" id="progress" value="0" min="0" step="1">
+    <div class="time">
+      <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
 
