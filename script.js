@@ -14,11 +14,14 @@ playBtn.addEventListener('click', () => {
   }
 });
 
+audio.addEventListener('loadedmetadata', () => {
+  durationEl.textContent = formatTime(audio.duration);
+});
+
 audio.addEventListener('timeupdate', () => {
   progress.max = Math.floor(audio.duration);
   progress.value = Math.floor(audio.currentTime);
   currentTimeEl.textContent = formatTime(audio.currentTime);
-  durationEl.textContent = formatTime(audio.duration);
 });
 
 progress.addEventListener('input', () => {
@@ -30,4 +33,3 @@ function formatTime(seconds){
   const sec = Math.floor(seconds % 60);
   return `${min}:${sec.toString().padStart(2,'0')}`;
 }
-
